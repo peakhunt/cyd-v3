@@ -114,25 +114,30 @@ void app_main(void)
     uint16_t g = 0x07E0; // Green
     uint16_t b = 0x001F; // Blue
 
-    ESP_LOGI(TAG, "ST7789 initialized and filled with red color");
 
     // Stay alive
     while (true) {
+        ESP_LOGI(TAG, "ST7789 filled with red color");
         fill_screen(panel_handle, r);
         vTaskDelay(pdMS_TO_TICKS(1000));
 
+        ESP_LOGI(TAG, "ST7789 filled with green color");
         fill_screen(panel_handle, g);
         vTaskDelay(pdMS_TO_TICKS(1000));
 
+        ESP_LOGI(TAG, "ST7789 filled with blue color");
         fill_screen(panel_handle, b);
         vTaskDelay(pdMS_TO_TICKS(1000));
 
+        ESP_LOGI(TAG, "ST7789 filled with black color");
         fill_screen(panel_handle, 0x0000);
         vTaskDelay(pdMS_TO_TICKS(1000));
 
+        ESP_LOGI(TAG, "ST7789 filled with screen off");
         esp_lcd_panel_disp_on_off(panel_handle, false);
         gpio_set_level(PIN_NUM_BCKL, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
+        ESP_LOGI(TAG, "ST7789 filled with screen on");
         esp_lcd_panel_disp_on_off(panel_handle, true);
         gpio_set_level(PIN_NUM_BCKL, 1);
     }
