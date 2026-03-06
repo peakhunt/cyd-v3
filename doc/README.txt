@@ -3,6 +3,7 @@ AKA Cheap Yellow Board (CYD)
 
 2.8-inch TFT touchscreen 320x240
 ST7789 lcd driver
+XPT2046 touch sensor
 SD card slot
 RGB LED
 
