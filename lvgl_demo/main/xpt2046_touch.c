@@ -42,6 +42,7 @@ esp_err_t xpt2046_touch_init(void)
         .y_max = LCD_HEIGHT,
         .rst_gpio_num = GPIO_NUM_NC,
         .int_gpio_num = XPT2046_PIN_IRQ,
+        //.int_gpio_num = GPIO_NUM_NC,
         .levels = {
           .reset = 0,
           .interrupt = 0,
@@ -57,7 +58,6 @@ esp_err_t xpt2046_touch_init(void)
     esp_err_t ret;
 
     ret = esp_lcd_touch_new_spi_xpt2046(io_handle, &touch_config, &xpt2046_handle);
-    // esp_lcd_touch_set_mirror_x(xpt2046_handle, true);
     return ret;
 }
 

@@ -7,7 +7,7 @@
 
 #define LCD_WIDTH   240
 #define LCD_HEIGHT  320
-#define DRAW_BUFFER_HEIGHT      (LCD_HEIGHT / 8)
+#define DRAW_BUFFER_HEIGHT      (LCD_HEIGHT / 4)
 
 extern esp_lcd_panel_handle_t _panel_handle;
 extern esp_lcd_panel_io_handle_t _io_handle;
